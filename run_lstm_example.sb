@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=gas_lstm
+#SBATCH --output=gas_lstm.out
+#SBATCH --error=gas_lstm.err
+#SBATCH --time=00:05:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=2G
+
+# Load Python and PyTorch
+module load python/3.10-anaconda
+source activate pytorch
+
+# Run the example code
+python src/example_lstm.py
